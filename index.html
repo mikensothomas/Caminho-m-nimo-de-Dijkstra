@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dijkstra Pathfinding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dijkstra's Algorithm - Pathfinding Visualization</h1>
+    <div id="graph-container">
+      <canvas id="graphCanvas"></canvas>
+    </div>
+    <div id="controls">
+      <button onclick="setMode('setOrigin')">Set Origin</button>
+      <button onclick="setMode('setDestination')">Set Destination</button>
+      <button onclick="runDijkstra()">Run Dijkstra</button>
+      <p>Click to add nodes, drag between nodes to create edges.</p>
+      <p>Use the buttons to select the origin and destination nodes.</p>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
