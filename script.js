@@ -80,10 +80,17 @@ canvas.addEventListener('mouseup', (e) => {
   if (dragStartNode) {
     const node = getNodeAt(e.offsetX, e.offsetY);
     if (node && dragStartNode !== node) {
-      const weight = Math.floor(Math.hypot(node.x - dragStartNode.x, node.y - dragStartNode.y) / 10);
-      edges.push(new Edge(dragStartNode, node, weight));
-      dragStartNode.edges.push({ node, weight });
-      node.edges.push({ node: dragStartNode, weight });
+      // Solicitar ao usuário o peso da aresta
+      const weightInput = prompt('Enter the weight of the edge:', '1');
+      const weight = parseInt(weightInput);
+
+      if (!isNaN(weight) && weight > 0) {
+        edges.push(new Edge(dragStartNode, node, weight));
+        dragStartNode.edges.push({ node, weight });
+        node.edges.push({ node: dragStartNode, weight });
+      } else {
+        alert('Invalid weight! Please enter a positive number.');
+      }
     }
     dragStartNode = null;
     draw();

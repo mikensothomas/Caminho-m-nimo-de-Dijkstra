@@ -13,8 +13,8 @@ body {
   #graph-container {
     margin: 20px auto;
     position: relative;
-    width: 800px;
-    height: 600px;
+    width: 700px;
+    height: 500px;
     border: 1px solid #ccc;
     background: white;
   }
